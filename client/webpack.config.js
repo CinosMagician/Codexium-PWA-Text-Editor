@@ -19,6 +19,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE',
+        favicon: './favicon.ico',
       }),
       new WebpackPwaManifest({
         fingerprints: false,
@@ -44,6 +45,7 @@ module.exports = () => {
       }),
       new CopyWebpackPlugin({
         patterns: [
+          { from: 'favicon.ico', to: 'favicon.ico' },
           { from: 'offline.html', to: 'offline.html' },
           { from: 'src/images/fallback.png', to: 'assets/images/fallback.png' },
         ],
