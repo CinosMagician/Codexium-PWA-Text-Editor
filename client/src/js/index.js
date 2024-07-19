@@ -23,7 +23,8 @@ loadSpinner();
 // Initialize editor after DOM is fully loaded
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const editor = new Editor(); // Initialize the editor
+    // Initialize the editor
+    const editor = new Editor(); 
 
     // Get data from IndexedDB and initialize editor with the retrieved data
     const data = await getDb();
@@ -45,8 +46,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Check if service workers are supported
     if ('serviceWorker' in navigator) {
       try {
-        const workboxSW = new Workbox('/service-worker.js'); // Adjust path to your service worker file
-        await workboxSW.register(); // Register the service worker
+        const workboxSW = new Workbox('/service-worker.js');
+        // Register the service worker
+        await workboxSW.register(); 
         console.log('Service worker registered successfully');
       } catch (error) {
         console.error('Error registering service worker:', error);
